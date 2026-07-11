@@ -1,7 +1,7 @@
 pipeline {
-    agent {
-        label 'electronics'
-    }
+   agent {
+    label 'electronix'
+}
 
     stages {
         stage("I am from Electronics") {
