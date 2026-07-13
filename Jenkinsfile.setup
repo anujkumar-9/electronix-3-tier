@@ -4,20 +4,29 @@ pipeline {
     }
 
     stages {
-
-        stage('Tools Configure') {
-            steps {
-                echo 'Tools Installation Pipeline'
-            }
-        }
-
-        stage('List Update') {
+        stage('Provision Node.js Runtime') {
             steps {
                 sh '''
-                    sudo apt-get update -y
+                    if ! command -v node >/dev/null 2>&1; then
+                        echo "Installing Node.js..."
+
+                        sudo apt-get update -y
+                        sudo apt-get install -y curl
+
+                        curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+                        sudo bash nodesource_setup.sh
+
+                        sudo apt-get install -y nodejs
+
+                        rm -f nodesource_setup.sh
+                    fi
+
+                    node -v
+                    npm -v
+
+                    echo "✅ Node.js Runtime Successfully Installed"
                 '''
             }
         }
-
     }
 }
