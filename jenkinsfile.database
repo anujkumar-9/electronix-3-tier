@@ -7,7 +7,7 @@ pipeline {
 
         stage('Creating Database') {
             steps {
-                sh 'python3 scripts/create_db.py'
+                sh 'python3 scripts/create_db_.py'
             }
         }
 
