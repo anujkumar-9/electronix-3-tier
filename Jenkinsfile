@@ -72,7 +72,7 @@ pipeline {
                 }
 
                 failure {
-                    echo "❌ Frontend deployment failed."
+                    echo "❌ Frontend deployment failedd."
                 }
             }
         }
