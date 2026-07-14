@@ -4,22 +4,21 @@ pipeline {
     }
 
     stages {
-
         stage('Creating Database') {
             steps {
-                sh 'python3 scripts/create_db_.py'
+                dir('ecommerce-react-python') {
+                    sh 'python3 scripts/create_db.py'
+                }
             }
         }
-
     }
 
     post {
         success {
-            echo "✅ Database created successfully."
+            echo '✅ Database created successfully.'
         }
-
         failure {
-            echo "❌ Database creation failed."
+            echo '❌ Database creation failed.'
         }
     }
 }
