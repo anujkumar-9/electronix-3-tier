@@ -18,6 +18,9 @@ import NotFound from './pages/NotFound';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
+  
+   // Jenkins Pipeline Test
+  console.log("Testing Jenkins");
 
   return (
     <AuthProvider>
