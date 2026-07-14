@@ -1,0 +1,22 @@
+pipeline {
+    agent {
+        label 'electronix'
+    }
+
+    stages {
+
+        stage('Tools Configure') {
+            steps {
+                echo 'Tools Installation Pipeline'
+            }
+        }
+
+        stage('List Update') {
+            steps {
+                sh '''
+                    sudo apt-get update -y
+                '''
+            }
+        }
+    }
+}
