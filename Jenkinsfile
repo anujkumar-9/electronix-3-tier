@@ -66,7 +66,11 @@ pipeline {
                 }
             }
 
-            post {
+
+        }
+    }
+
+                post {
                 success {
                     echo "✅ Frontend deployed successfully."
                 }
@@ -75,6 +79,4 @@ pipeline {
                     echo "❌ Frontend deployment failed."
                 }
             }
-        }
-    }
 }
