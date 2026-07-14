@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'electronics'
+        label 'electronix'
     }
 
     environment {
