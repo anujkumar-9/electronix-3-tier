@@ -13,10 +13,6 @@ pipeline {
 
         stage('Frontend Deployment') {
 
-            when {
-                changeset "ecommerce-react-python/frontend/**"
-            }
-
             stages {
 
                 stage('Install Dependencies') {
@@ -65,18 +61,16 @@ pipeline {
                     }
                 }
             }
-
-
         }
     }
 
-                post {
-                success {
-                    echo "✅ Frontend deployed successfully."
-                }
+    post {
+        success {
+            echo "✅ Frontend deployed successfully."
+        }
 
-                failure {
-                    echo "❌ Frontend deployment failed."
-                }
-            }
+        failure {
+            echo "❌ Frontend deployment failed."
+        }
+    }
 }
